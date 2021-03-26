@@ -147,4 +147,4 @@ for ss in servicios:
         anim.save(f'mp4/dSOC_{ss}_{meses[-1]}.mp4', writer=FFwriter)
     else:  # se guardara como gif
         anim = camera.animate(interval=1500, repeat_delay=4000, blit=True)
-        anim.save(f'mp4/dSOC_{ss}_{meses[-1]}.gif')
+        anim.save(f'gif/dSOC_{ss}_{meses[-1]}.gif')
