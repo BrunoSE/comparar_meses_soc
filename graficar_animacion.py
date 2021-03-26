@@ -140,11 +140,11 @@ for ss in servicios:
         camera.snap()
 
     # anim = ani.ArtistAnimation(fig, ims, interval=500, repeat_delay=3000, blit=True)
-    if True:
-        WriterClass = animation.writers['ffmpeg']
-        writer = WriterClass(fps=10, metadata=dict(artist='bww'), bitrate=1800)
+    guardar_como_video = False
+    if guardar_como_video:
+        FFwriter = animation.FFMpegWriter(fps=30, bitrate=1800)
         anim = camera.animate(interval=1500, repeat_delay=4000, blit=True)
-        anim.save(f'mp4/dSOC_{ss}_{meses[-1]}.mp4', writer=writer)
-    else:
+        anim.save(f'mp4/dSOC_{ss}_{meses[-1]}.mp4', writer=FFwriter)
+    else:  # se guardara como gif
         anim = camera.animate(interval=1500, repeat_delay=4000, blit=True)
         anim.save(f'mp4/dSOC_{ss}_{meses[-1]}.gif')
